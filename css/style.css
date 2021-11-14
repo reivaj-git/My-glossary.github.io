@@ -1,0 +1,413 @@
+:root {
+    --fuenteHeading: 'Poppins', sans-serif;
+    --fuenteParrafo: 'Open Sans', sans-serif;
+
+    --primario: #28b463;
+    --secundario: #eff3f5;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    background-color: var(--secundario);
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuenteParrafo);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/** Globales **/
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+@media (max-width: 411px) {
+
+    .logo__nombre,
+    .logo__bold {
+        font-size: rem;
+    }
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+@media (max-width: 280px) {
+    .h3 {
+        font-size: 2rem;
+    }
+}
+
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/** Utilidades **/
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+/** Utilidades **/
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.letra-mayus {
+    text-transform: capitalize;
+}
+
+/*header*/
+
+.header {
+    background: var(--negro);
+    display: flex;
+     /* barra nav fija */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.heading-2{
+    margin-top: 12rem;
+    margin-bottom: 6rem;
+
+}
+
+/*navegacion*/
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    
+
+    /* align-items: center; */
+}
+
+
+/* .nav-boton {
+    color: var(--blanco);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    padding: 0 20px;
+    line-height: 6rem;
+    /*ojo aqui*/
+    /* cursor: pointer;
+
+    display: none; 
+} */
+
+.navegacion {
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    column-gap: 2rem;
+    
+
+}
+/*modificado a x li*/
+.navegacion a:hover {
+    background-color: var(--primario);
+    border-radius: .3rem;
+    color: var(--negro);
+    transition: .3s;
+}
+
+.navegacion__enlace {
+    color: var(--blanco);
+
+}
+
+
+/* agregado */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+.drop-down-menu .drop-down-button {
+    font-size: 1.6rem;
+    outline: none;
+    color: var(--blanco);
+    padding: 2rem 2rem;
+    background-color: inherit;
+}
+.drop-down-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+    
+}
+
+.drop-down-menu-content {
+    display: none;
+    position: absolute;
+    background-color: var(--negro); 
+    min-width: 10rem;
+    box-shadow: 0 .8rem 1rem 0 rgba(0, 0, 00.3);
+    z-index: 1;
+}
+
+.drop-down-menu:hover {
+    background-color: var(--primario);
+    border-radius: .3rem;
+    color: var(--blanco);
+}
+
+.drop-down-menu-content a {
+    float: none;
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    display: block;
+}
+
+.drop-down-menu-content a:hover {
+    background-color: var(--primario);
+    color: var(--blanco);
+    
+
+    /*aqui podriamos cambiar el tamano del selector mobil*/
+}
+
+.drop-down-menu:hover .drop-down-menu-content {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+     font-size: 1.4rem;
+}
+
+.drawer {
+    font-size: 2.8rem;
+    color: var(--blanco);
+    float: center;
+    cursor: pointer;
+    display: none;
+    margin-left: 2rem;
+    border: none;
+    padding: .3rem;
+    border-radius: .5rem;
+}
+
+#ckbox {
+    display: none
+}
+
+
+/*logo*/
+.logo h1:hover {
+    color: var(--primario);
+    transition: .3s;
+}
+
+.logo {
+    color: var(--blanco);
+
+}
+
+.logo__nombre {
+    font-weight: 400;
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+/*ultimo bloque*/
+
+/** Grid **/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /*con minmax (0) anadido, evitamos desborde lateral*/
+    gap: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.ejercice {
+    background-color: var(--negro);
+    border-radius: 1rem;
+    cursor: default;
+    transition: all 400ms ease;
+    overflow: hidden; 
+    /*si algo se desvorda, se oculta ejemplo. texto*/
+
+
+}
+
+.ejercice:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+     /* transform: translateY(-3%); */
+}
+
+.ejercice__sombra {
+    -webkit-box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+    box-shadow: 0px 11px 15px -9px rgba(0, 0, 0, 0.63);
+}
+
+.border{
+    border-top: 1px solid var(--secundario);
+    border-bottom:1px solid var(--secundario);
+}
+
+.palabra__imagen {
+    width: 20rem;
+    height: 25rem;
+    width: 100%;
+}
+
+/*ultimo bloque*/
+.ejercice--ultimo-bloque {
+    grid-column: 3/2;
+}
+
+.palabra__hg {
+    color: var(--blanco);
+}
+
+/*bold*/
+.palabra__informacion {
+    text-align: center;
+    color: var(--blanco);
+}
+
+.word__bold {
+    font-weight: bold;
+}
+
+/*footer*/
+.footer {
+    background-color: var(--negro);
+    margin-top: 10rem;
+    color: var(--blanco);
+    
+}
+
+.footer__derechos {
+    border-top: 1px solid var(--primario);
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+
+
+@media (max-width:768px) {
+    nav{
+        justify-content: space-around;
+        
+    }
+
+    .drawer {
+        display: block;
+    }
+
+    .drop-down-menu-content {
+        width: 100%;
+        
+    }
+
+    h1 {
+        margin-left: 1rem;
+        
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--negro);
+        top: 6.1rem;
+        left: 100%;
+        text-align: center;
+        transition: all .5s;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        overflow-y: auto;
+        
+    }
+
+    #ckbox:checked~.menu-box {
+        left: 0;
+    }
+}
+
+@media (max-width:360px) {
+    ul{
+        font-size: 1.2rem;
+    }
+}
